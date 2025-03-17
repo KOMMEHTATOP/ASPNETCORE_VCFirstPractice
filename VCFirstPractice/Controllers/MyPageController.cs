@@ -28,5 +28,15 @@ namespace VCFirstPractice.Controllers
             double price;
             return View();
         }
+
+        //POST - CREATE
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddNewBook(BooksModel obj)
+        {
+            _db.Books.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
