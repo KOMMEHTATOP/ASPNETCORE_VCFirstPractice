@@ -1,0 +1,27 @@
+﻿@model VCFirstPractice.Models.BooksModel
+
+<form method="post" asp-action="AddNewBook">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author" class="control-label"></label>
+        <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add New Book" class="btn btn-primary" />
+        <a asp-controller="MyPage" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial"/>
+        }

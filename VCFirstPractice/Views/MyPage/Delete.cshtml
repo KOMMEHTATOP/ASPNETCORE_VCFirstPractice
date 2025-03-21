@@ -1,0 +1,26 @@
+﻿@model VCFirstPractice.Models.BooksModel
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="Id" type="hidden" />
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" disabled class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Author" class="control-label"></label>
+        <input asp-for="Author" disabled class="form-control" />
+    </div>      
+    <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" disabled class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+        <a asp-controller="MyPage" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial"/>
+        }
