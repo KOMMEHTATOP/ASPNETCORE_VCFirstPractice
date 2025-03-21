@@ -15,8 +15,17 @@ namespace VCFirstPractice.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<BooksModel> objList = _db.Books;
-            return View(objList);
+            var books = _db.Books.ToList();
+            for (int i = 0; i < books.Count; i++)
+            {
+                books[i].DisplayNumber = i + 1;
+            }
+            return View(books);
+
+            //Это старая запись до добавления корректного счетчика книг.
+            //Можно было сделать через foreach, но была бы лишняя переменная.
+            //IEnumerable<BooksModel> objList = _db.Books;
+            //return View(objList);
         }
 
         //GET - Create

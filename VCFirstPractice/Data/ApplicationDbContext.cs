@@ -10,4 +10,5 @@ namespace VCFirstPractice.Data
         }
         public DbSet<BooksModel> Books { get; set; }
     }
+
 }
